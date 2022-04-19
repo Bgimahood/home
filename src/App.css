@@ -1,0 +1,60 @@
+.home-page {
+  padding: 7px 15px;
+  color: rgb(106, 107, 107);
+  font-size: 1em;
+  font-family: Bahnschrift;
+}
+/* bgimahood customised buttons */
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 0.2em;
+  margin: 5px;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.blue {
+  background-color: rgb(11, 113, 202);
+  color: #fff;
+}
+.green{
+    background-color: rgb(14, 145, 10);
+    color: #fff;
+}
+.orange {
+  background-color: rgb(231, 130, 15);
+  color: #fff;
+}
+.red{
+  background-color: rgb(161, 12, 12);
+  color: #fff;
+}
+/*code for input fields*/
+input {
+  padding: 8px 17px;
+  border: 0.5px solid #ddd;
+  border-radius: 0.2em;
+  font-size: 1em;
+  margin: 5px;
+  color: rgb(133, 139, 145);
+}
+input [type=password] {
+  padding: 8px 18px;
+  border: 0.5px solid #ddd;
+  border-radius: 0.2em;
+  font-size: 1.1em;
+  margin: 5px;
+}
+/* code for the header */
+.header {
+  font-size: 1.4em;
+  padding: 10px 20px;
+  margin: 3px auto;
+}
+/*code for the modal */
+.modal-container{
+  background-color: rgba(13, 16, 20, 0.459);
+  position: absolute;
+}
