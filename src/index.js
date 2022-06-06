@@ -1,21 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from 'react-redux';
-import userReducer from './features/user';
-import MyModal from './features/MyModal';
-
-const store = configureStore({
-  reducer: {
-    user: userReducer,
-    mymodal: MyModal,
-  },
-});
+import { BrowserRouter } from 'react-router-dom';
+import { store } from './AppStore/store';
 
 ReactDOM.render(  
-   <Provider store={store}>
-    <App />
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
    </Provider>,
   document.getElementById('root')
 );
