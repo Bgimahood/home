@@ -32,13 +32,28 @@ function Staff() {
     return (
         <div>
             Staff login
-            <hr />
+          
             Step {count+1} of {pages.length}
             <div style={{border:'1px solid #333', width:'60%',padding:'1em',margin:'1em 20%'}}>
                 {pages[count]}
             </div>
             <button className='btn maroon' onClick={() => setCount(count - 1)}>Previous</button>
             <button className='btn green' onClick={() => setCount(count + 1)}>Next</button>
+            <button
+                onClick={() => setPages([
+                    (
+                        <div>
+                        I cant with failure becouase i know it hurts
+                        </div>
+                    )
+                    ,
+                    (
+                        <div>
+                            Hopefully and got right
+                        </div>
+                    )
+                ])}
+            > Something else</button>
         </div>
     );
 }

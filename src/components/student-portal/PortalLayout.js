@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { Row, Col, Divider, Space} from 'antd';
+import { useSelector } from 'react-redux';
+import { Divider, Space} from 'antd';
 import {
     HomeFilled,
     SettingFilled,
@@ -8,32 +9,34 @@ import {
     AreaChartOutlined,
     PoweroffOutlined,
     WechatFilled,
-    BellFilled
+    BellFilled,
+    SettingOutlined
 } from '@ant-design/icons';
-import profilePic from '../../pics/profil.jpg';
+
 
 function PortalLayout() {
+    const userDetails = useSelector((user) => user.profile.value);
     return (
-        <div>
-            <div className='top-menu portal'>
-                <Link to='/student-portal/home' style={{ color: 'orange', fontSize: '1.2em', margin: 'auto 3em' }}>
-                    Bulera Core PTC Students' Portal
-                </Link>  
-                <li><BellFilled style={{ fontSize: '1.4em' }} /></li>
-                <li>Angelina Jolly</li>
-                <li><img src={profilePic} alt='prof' /> </li>
-                
-            </div>
-            <div className="pages-container">
-                <Row gutter={4}>
-                    <Col style={{textAlign:'center'}} className="left-menu">
+        <div className='portal-layout'>            
+            <div className="pages-container">              
+                <div className="left-menu">
+                    <div className='profile-pic'>
+                       <img src={userDetails.profilePic} alt='pPhoto' />
+                        <br />
+                        
+                        <p> <span style={{fontSize:'14px',color:"rgb(22, 54, 0)"}}> {userDetails.userName} </span> <br/>
+                            <b> {userDetails.regNo}</b>  | {userDetails.class}
+                        </p>   
+                        
+                    </div> 
                         <ul className='portal-sideMenu'>
-                            <div className='profile-pic'>
-                                <img src={profilePic} alt='prof'/>
-                            </div> 
+                            
                             <Link to='/student-portal/home'>
                                 <li> <Space> <HomeFilled style={{ fontSize: '1.5em', padding: '0.3em' }} /> Home </Space></li>
-                            </Link>  
+                        </Link>  
+                         <Link to='/student-portal/home/payments'>
+                                <li> <Space> <DollarCircleFilled style={{ fontSize: '1.5em', padding: '0.3em' }} /> Messages</Space></li>
+                            </Link>
                             <Link to='/student-portal/home/myprofile'>
                                 <li> <Space> <SettingFilled style={{ fontSize: '1.5em', padding: '0.3em' }} /> Profile </Space></li>
                             </Link>
@@ -42,35 +45,39 @@ function PortalLayout() {
                             </Link>
                             <Link to='/student-portal/home/payments'>
                                 <li> <Space> <DollarCircleFilled style={{ fontSize: '1.5em', padding: '0.3em' }} /> Payments </Space></li>
+                        </Link>
+                         <Link to='/student-portal/home/payments'>
+                                <li> <Space> <DollarCircleFilled style={{ fontSize: '1.5em', padding: '0.3em' }} /> Calendar </Space></li>
                             </Link>
                             <Link to='/student-portal/home/blog-page'>
                                 <li> <Space> <WechatFilled style={{ fontSize: '1.5em', padding: '0.3em' }} />  Blog </Space></li>
                             </Link>
-                            <Link to='/'>
+                            <Link to='/student-portal'>
                                 <li> <Space> <PoweroffOutlined style={{ fontSize: '1.5em', padding: '0.3em' }} /> Log Out</Space> </li>
                             </Link>
                            
                         </ul>
-                        <Divider dashed/>
-                        <button
-                            className='btn green'
-                        >
-                            Toggle
-                        </button>
-                        <Link to='/'>
-                        <button
-                            className='btn orange'
-                            
-                        >
-                            Log Out
-                        </button>
-                        </Link>
-                    </Col>
-                    <Col className="right-pages">
-                         <Outlet/>
-                    </Col>   
-                </Row>
-                <div style={{padding:'2em', fontSize:'1.1em'}}>
+                        
+                    </div>
+                <div className="right-pages">
+                    <div className='top-menu1'>
+                            <span>
+                                Bulera Core PTC Students' Portal
+                            </span>                                 
+                        <li><BellFilled style={{ fontSize: '1.4em' }} /></li>
+                        <li> <SettingOutlined style={{ fontSize: '1.4em' }} /> </li>
+                        <li> <img src={userDetails.profilePic} alt='pPhoto'/></li>
+                     
+                        <Divider type='vertical'/>
+                        <li>{ userDetails.userName}</li>
+                    </div>
+                    <div className='portal-outlet'>
+                        <Outlet />
+                    </div>
+                    
+                    </div>   
+               
+                <div style={{padding:'0.5em', fontSize:'1.1em'}}>
                       A &copy; 2022 Copyright | All rights reserved | Bulera Core PTC 
                 </div>
              

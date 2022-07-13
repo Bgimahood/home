@@ -4,6 +4,7 @@ import MyModal from '../features/MyModal';
 import authSlice from '../features/authSlice';
 import ThemeColor from '../features/ThemeColor';
 import SpinSlice from '../features/SpinSlice';
+import UserProfile from '../features/profile';
 export const store = configureStore({
   reducer: {
     user: userReducer,
@@ -11,5 +12,6 @@ export const store = configureStore({
     authentication: authSlice,
     activestate: ThemeColor,
     spinner: SpinSlice,
+    profile: UserProfile
   },
 });

@@ -3,9 +3,6 @@ import { Link, Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { openModal, closeModal } from '../features/MyModal';
 import Footer from './Footer';
-import { WindowsOutlined, PhoneFilled } from '@ant-design/icons';
-//import BuleraLogo from '../pics/Bulera_logo_New.png';
-import { Divider, Row, Col, Space } from 'antd';
 
 const HomeLayout = () => {
     const [toggle, setToggle] = useState('');

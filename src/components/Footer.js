@@ -1,6 +1,5 @@
 import React from 'react';
 import { Divider, Space } from 'antd';
-import BuleraLogoWhite from '../pics/bulera_logo_white.png';
 import { TwitterCircleFilled, InstagramFilled, FacebookFilled, LinkedinFilled } from '@ant-design/icons';
 
 function Footer() {
@@ -12,7 +11,7 @@ function Footer() {
                 
             </div>
             <div className='foot-content'>
-                <h3>Quick Links</h3>
+                <h3>Quick Links </h3>
 
                 <ul>
                     <li>Online Application</li>
@@ -51,7 +50,7 @@ function Footer() {
                 
                 
             </div>
-            <div className='last'> A Copyright &copy; 2022, All rights reserved by Bulera Core PTC | <a href='#'> Designed by Bgima Inc</a></div>
+            <div className='last'> A Copyright &copy; 2022, All rights reserved by Bulera Core PTC | <a href='www.google.com'> Designed by Bgima Inc</a></div>
         </div>
     );
 }

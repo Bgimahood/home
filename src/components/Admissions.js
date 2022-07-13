@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { Divider, Row, Col} from 'antd';
-import { CompassFilled, LikeFilled } from '@ant-design/icons';
+import { Divider} from 'antd';
+import { LikeFilled } from '@ant-design/icons';
 import image_exte from '../pics/image_exte.jpeg';
 import justIm from '../pics/Mothers-Day-Flowers-Choosing-The-Right-Mothers-Day-Flowers.jpg';
 function Admissions() {
@@ -25,7 +25,7 @@ function Admissions() {
                 <img src={justIm} alt='syd' />
             <p>
               
-                All those who studied between 2006 and 2019 and did not complete thier grade III certificates for Kyambogo University,
+                All those who studied between 2006 to 2019 and did not complete thier grade III certificates for Kyambogo University,
                 are hereby invited to take this chance and apply through any PTC so that they can retake their papers.
             </p>
             <div className='like-section'>
